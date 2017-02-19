@@ -11,7 +11,9 @@ app.get("/static/:filename", function (req,res){
 });
 app.post("/chat", function (req,res){
   console.log(req.body);
-  var obj=req.body;
-  res.send(req.body);
+  var messages= new Array();
+  messages.push(req.body)
+  console.log(messages);
+  res.send(messages);
 });
 app.listen(8080);
