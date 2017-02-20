@@ -12,7 +12,7 @@ $("#title").html("<center><h2>Простенький Чат</h2>");
         dataType: "json",
         data: JSON.stringify(phbook),
       success: function(res){
-        $("#chatText").html(res);
+        alert(res);
       }
     });
  });

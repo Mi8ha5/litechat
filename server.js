@@ -12,8 +12,8 @@ app.get("/static/:filename", function (req,res){
 });
 app.post("/chat", function (req,res){
   console.log(req.body);
-    messages.push(req.body);
+  messages.push(req.body);
   console.log(messages);
-  res.send(messages);
+  res.send(JSON.stringify(messages));
 });
 app.listen(8080);
