@@ -4,6 +4,7 @@ var router = express.Router();
 var fs = require ("fs");
 var path = require ('path');
 var bodyParser = require ('body-parser');
+var messages = new Array();
 app.use(bodyParser.json());
 app.use(express.static(path.join(process.cwd()) + '/static'));
 app.get("/static/:filename", function (req,res){
@@ -11,8 +12,7 @@ app.get("/static/:filename", function (req,res){
 });
 app.post("/chat", function (req,res){
   console.log(req.body);
-  var messages= new Array();
-  messages.push(req.body)
+    messages.push(req.body);
   console.log(messages);
   res.send(messages);
 });
