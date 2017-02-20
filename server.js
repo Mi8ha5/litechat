@@ -14,6 +14,10 @@ app.post("/chat", function (req,res){
   console.log(req.body);
   messages.push(req.body);
   console.log(messages);
-  res.send(JSON.stringify(messages));
+  res.send(messages);
+});
+app.get("/load", function (req,res){
+  console.log(req.body);
+  res.send(messages);
 });
 app.listen(8080);

@@ -1,6 +1,6 @@
 $("#title").html("<center><h2>Простенький Чат</h2>");
  $("#output").click(function (){
-   var phbook = {
+   var message = {
         "name" : $("#username").val(),
         "message" : $("#message").val(),
       };
@@ -10,9 +10,20 @@ $("#title").html("<center><h2>Простенький Чат</h2>");
         type: 'POST',
         contentType: "application/json; charset=utf-8",
         dataType: "json",
-        data: JSON.stringify(phbook),
+        data: JSON.stringify(message),
       success: function(res){
-        alert(res);
+        alert(JSON.stringify(res));
       }
     });
+ });
+ $("#reload").click(function(){
+   alert("LOAD");
+   $.ajax({
+     url:"/load",
+     type: "GET",
+     
+     success: function(res){
+       $("#chatText").html(JSON.stringify(res));
+     }
+   });
  });
